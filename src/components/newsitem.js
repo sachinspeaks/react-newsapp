@@ -2,16 +2,18 @@ import React, { Component } from "react";
 
 export class NewsItem extends Component {
   render() {
-    let { title, description, imageurl, newsurl, author, date ,source} = this.props;
+    let { title, description, imageurl, newsurl, author, date, source } = this.props;
     return (
-      <div>
+      <div >
         <div className="card border border-dark border border-5 border-opacity-25">
+        <div style={{display:"flex",justifyContent:"flex-end",position:"absolute",right:"0"}}>
+              <span className="badge bg-danger" >
+                {source}
+              </span>
+            </div>
           <img src={imageurl} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style={{zIndex:1,marginLeft:-35}}>
-              {source}
-            </span>
             <p className="card-text">{description}</p>
             <p className="card-text my-2">
               <small className="text-body-secondary">
